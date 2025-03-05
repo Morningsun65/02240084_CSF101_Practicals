@@ -52,7 +52,7 @@ print(a.lower())
 print(a.count("i"))
 print(a.find("d"))
 print(a.split())
-
+cl
 #String concatenation
 b="hello"
 c="Hello"
