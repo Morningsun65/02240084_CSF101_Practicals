@@ -53,66 +53,80 @@ print(f"Average word length: {avg_length:.2f} characters")
 
 
 
-#MY CODES
+
+# MY CODES
 
 #FOR FINDING UNIQUE WORDS
 
 def count_unique_words(content):
-    words = content.lower().split()  # Convert to lowercase and split into words
-    unique_words = []  # Create an empty list to store unique words
+    words = content.lower().split()  
+    unique_words = []  
 
-    for word in words:  # Loop through each word
+    for word in words:  
         if word not in unique_words:  # If the word is not already in the list
             unique_words.append(word)  # Add it to the list
 
-    return len(unique_words)  # Return the count of unique words
+    return len(unique_words) 
 
-
+"""TO find unique words in the text file, i first made sure all words are lowercased and
+split to be read as individual word. then create an empty list. so what will it do with the loop,
+it will put words in tec=xt file one after another, and skip the word that is already in the list.
+then print the length to show how many words are unique"""
 
 #FOR LONGEST WORD
 
 def for_longest_word(content):
-    words = content.split()  # Spliting the text into words
+    words = content.split()  
     longest_word = ""  # Start with an empty longest word
     longest_length = 0  # Start with length 0
 
-    for word in words:  # Loop through each word
+    for word in words:  
         if len(word) > longest_length:  # If this word is longer than the current longest
             longest_word = word  # Update the longest word
             longest_length = len(word)  # Update the longest length
 
-    return longest_word, longest_length  # Return the result
-
+    return longest_word, longest_length 
+"""to find the longest word, we compare it using the length of each word. if the length of the word
+is longer than the previous one, it will update the longest word and it keeps on going till
+the last word"""
 
 # TO FIND SPECIFIC WORD
 
 def count_specific_word(content, target_word):
-    words = content.lower().split()  # Convert to lowercase and split into words
+    words = content.lower().split()  
     target_word = target_word.lower()  # Convert target word to lowercase
     count = 0  # Start the count at 0
 
-    for word in words:  # Loop through each word
+    for word in words:  
         if word == target_word:  # If the word matches the target word
-            count += 1  # Increase the count
+            count += 1  
+    return count  
 
-    return count  # Return the total count
+'''to find specific word count, we make the word count to 0 at the beginning, then, we make sure if the word
+matches the target word whereby if it matches, we increase the count by 1 and so on till the last word inthe text.
+for this we will need to make sure the user puts in a specific word they wanna check for, that will be the target
+word that the prompt will search for in the text file'''
 
-# percentage of word longer than average word length
+
+
+# PERCENTAGE OF WORD LONGER THAN AVERAGE WORD LENGTH
 def percentage_long_words(content):
-    words = content.split()  # Split text into words
-    avg_length = average_word_length(content)  # Get the average word length
-    long_word_count = 0  # Counter for words longer than average
-    total_words = len(words)  # Total number of words
+    words = content.split()  
+    avg_length = average_word_length(content)  
+    long_word_count = 0 
+    total_words = len(words)  
 
-    for word in words:  # Loop through each word
-        if len(word) > avg_length:  # If word is longer than average
-            long_word_count += 1  # Increase the counter
+    for word in words: 
+        if len(word) > avg_length: 
+            long_word_count += 1 
 
-    percentage = (long_word_count / total_words) * 100  # Calculate percentage
-    return percentage  # Return the percentage
+    percentage = (long_word_count / total_words) 
+    return percentage 
 
 
-
+'''what it does is split the words in the text file and compare it to the average length. if it is longer
+than average length it wil add it to long word count and at last divide by total words times 100 for
+percentage'''
 
 
 
